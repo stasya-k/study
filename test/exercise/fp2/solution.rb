@@ -10,6 +10,7 @@ module Exercise
         rest = MyArray.new(rest)
         yield first
         return if rest.empty?
+
         rest.my_each(&func)
         self
       end
@@ -17,7 +18,7 @@ module Exercise
       # Написать свою функцию my_map
       def my_map
         new_array = MyArray.new
-        my_reduce(new_array) do |acc, el| 
+        my_reduce(new_array) do |acc, el|
           acc << yield(el)
         end
         new_array
